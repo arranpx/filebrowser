@@ -18,8 +18,6 @@ import (
 
 // keepUploadActive periodically touches the cache entry to prevent eviction during transfer
 func keepUploadActive(cache UploadCache, filePath string) func() {
-	cache.Touch(filePath)
-
 	stop := make(chan bool)
 
 	go func() {
